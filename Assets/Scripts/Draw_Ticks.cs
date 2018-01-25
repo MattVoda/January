@@ -31,7 +31,8 @@ public class Draw_Ticks : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		//embiggen the ticks near the top of the cylinder
+        //angles available from evenCirclePointsList
 	}
 
     void FindCirclePoints(int points, float radius, Vector2 center) {
@@ -52,6 +53,7 @@ public class Draw_Ticks : MonoBehaviour {
         for (int i = 0; i < evenCirclePointsList.Count; i++) {
             GameObject go = Instantiate<GameObject>(tickPrefab, evenCirclePointsList[i], Quaternion.Euler(0f,0f, Mathf.Rad2Deg * evenCirclePointsList[i].w + 90), transform);
             go.name = "Tick" + i;
+            go.layer = 8;
         }
     }
 }
